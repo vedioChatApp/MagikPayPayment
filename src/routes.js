@@ -37,6 +37,13 @@ const Select = React.lazy(() => import('./views/forms/select/Select'))
 const Validation = React.lazy(() => import('./views/forms/validation/Validation'))
 
 const Charts = React.lazy(() => import('./views/charts/Charts'))
+const AdminDashboard = React.lazy(() => import('./views/pages/AdminDashbord/AdminDashbords'))
+const StaffManagementDashboard = React.lazy(() =>import("./views/pages/staff-management/StaffManagementDashboard"));
+const SiteManagement = React.lazy(() =>import("./views/pages/ SiteManagement/ SiteManagement"));
+const SettlementReport = React.lazy(() =>import("./views/pages/ SettlementReportAll/ SettlementReport"));
+const StaffManagement = React.lazy(() =>import("./views/pages/ StaffManagementAll/ StaffManagement"));
+
+
 
 // Icons
 const CoreUIIcons = React.lazy(() => import('./views/icons/coreui-icons/CoreUIIcons'))
@@ -54,8 +61,12 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
-  { path: '/dashboard', name: 'Dashboard', element: Dashboard },
-  { path: '/theme', name: 'Theme', element: Colors, exact: true },
+  { path: '/dashboard', name: 'Dashboard', element: AdminDashboard },
+  { path: '/management', name: 'API User Management', element: StaffManagementDashboard},
+{ path: '/SiteManagement', name: 'Site Management', element: SiteManagement},
+{ path: '/SettlementReport', name: 'Settlement Report', element: SettlementReport},
+{ path: '/StaffManagement', name: 'Staff Management', element: StaffManagement},
+  
   { path: '/theme/colors', name: 'Colors', element: Colors },
   { path: '/theme/typography', name: 'Typography', element: Typography },
   { path: '/base', name: 'Base', element: Cards, exact: true },
