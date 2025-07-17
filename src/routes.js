@@ -38,7 +38,24 @@ const Validation = React.lazy(() => import('./views/forms/validation/Validation'
 
 const Charts = React.lazy(() => import('./views/charts/Charts'))
 const AdminDashboard = React.lazy(() => import('./views/pages/AdminDashbord/AdminDashbords'))
+const ApiActivityLog = React.lazy(() => import('./views/pages/AdminDashbord/ApiActivityLog'))
+const ApiUserView = React.lazy(() => import('./views/pages/api-user-Mangerdashboard/ApiUserView'))
+const BalanceLog = React.lazy(() => import('./views/pages/api-user-Mangerdashboard/BalanceLog'))
+const ChargeManagement = React.lazy(() =>import("./views/pages/api-user-Mangerdashboard/ChargeManagement"));
+const EditAPI = React.lazy(() =>import("./views/pages/api-user-Mangerdashboard/EditAPI"));
+const RecentLoginActivies = React.lazy(() =>import("./views/pages/api-user-Mangerdashboard/RecentLoginActivies"));
+const ChangePassword = React.lazy(() =>import("./views/pages/api-user-Mangerdashboard/ChangePassword"));
+const Apifundload = React.lazy(() =>import("./views/pages/api-user-Mangerdashboard/Apifundload"));
+const AddIPAddress = React.lazy(() =>import("./views/pages/ SiteManagement/AddIPAddress"));
+const EditIPaddress = React.lazy(() =>import("./views/pages/ SiteManagement/EditIPaddress"));
+
+
+
+
+
+
 const StaffManagementDashboard = React.lazy(() =>import("./views/pages/staff-management/StaffManagementDashboard"));
+const ApiUserDashboard = React.lazy(() =>import("./views/pages/api-user-Mangerdashboard/ApiUserDashboard"));
 const SiteManagement = React.lazy(() =>import("./views/pages/ SiteManagement/ SiteManagement"));
 const SettlementReport = React.lazy(() =>import("./views/pages/ SettlementReportAll/ SettlementReport"));
 const StaffManagement = React.lazy(() =>import("./views/pages/ StaffManagementAll/ StaffManagement"));
@@ -62,10 +79,25 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', element: AdminDashboard },
-  { path: '/management', name: 'API User Management', element: StaffManagementDashboard},
+  { path: '/management', name: 'API User Management', element: ApiUserDashboard},
 { path: '/SiteManagement', name: 'Site Management', element: SiteManagement},
 { path: '/SettlementReport', name: 'Settlement Report', element: SettlementReport},
 { path: '/StaffManagement', name: 'Staff Management', element: StaffManagement},
+{ path: '/dashboard/ApiActivityLog', name: 'Api ActivityLog', element: ApiActivityLog },
+{ path: '/dashboard/ApiUserView', name: 'Api ActivityLog', element: ApiUserView },
+{ path: '/dashboard/BalanceLog', name: 'Api ActivityLog', element: BalanceLog },
+{ path: '/dashboard/ChargeManagement', name: 'Api ActivityLog', element: ChargeManagement },
+{ path: '/dashboard/EditAPI', name: 'Api ActivityLog', element: EditAPI },
+{ path: '/dashboard/RecentLoginActivies', name: 'Api ActivityLog', element: RecentLoginActivies },
+{ path: '/dashboard/ChangePassword', name: 'Api ActivityLog', element: ChangePassword },
+{ path: '/management/Apifundload', name: 'Api ActivityLog', element: Apifundload },
+{ path: '/SiteManagement/AddIPAddress', name: 'Api ActivityLog', element: AddIPAddress },
+{ path: '/SiteManagement/EditIPaddress', name: 'Edit-IP-address', element: EditIPaddress },
+
+
+
+
+
   
   { path: '/theme/colors', name: 'Colors', element: Colors },
   { path: '/theme/typography', name: 'Typography', element: Typography },

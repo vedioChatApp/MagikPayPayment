@@ -1,4 +1,5 @@
 import React from 'react'
+import userImg from '../../../assets/images/user.png';
 
 const LoginPage = () => {
   return (
@@ -148,7 +149,7 @@ const LoginPage = () => {
                 <div className="navbar-profile">
                   <img
                     className="img-xs rounded-circle"
-                    src="assets/images/user.png"
+                    src={userImg}
                     alt=""
                   />
                   <p className="mb-0 d-none d-sm-block navbar-profile-name">
@@ -448,7 +449,7 @@ const LoginPage = () => {
                 <div className="card-body">
                   <div className="display-head-search">
                     <h4 className="card-title">Live Transactions</h4>
-                    <a href="api-user-dashboard.html">
+                    {/* <a href="api-user-dashboard.html"> */}
                       <button
                         type="button"
                         className="btn btn-dark  border-r50"
@@ -456,7 +457,7 @@ const LoginPage = () => {
                       >
                         View All
                       </button>
-                    </a>
+                    {/* </a> */}
                   </div>
                   <div className="table-responsive">
                     <table className="table table-striped">

@@ -1,19 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import "../../../assets/css/style.css";
-import "../../../assets/vendors/font-awesome/css/font-awesome.min.css";
 import "../../../assets/vendors/mdi/css/materialdesignicons.min.css";
 import "../../../assets/vendors/ti-icons/css/themify-icons.css";
 import "../../../assets/vendors/css/vendor.bundle.base.css";
+import "../../../assets/vendors/font-awesome/css/font-awesome.min.css";
 import "../../../assets/vendors/jvectormap/jquery-jvectormap.css";
 import "../../../assets/vendors/flag-icon-css/css/flag-icons.min.css";
 import "../../../assets/vendors/owl-carousel-2/owl.carousel.min.css";
-
-import logo from "../../../assets/images/logo.png";
+import "../../../assets/vendors/owl-carousel-2/owl.theme.default.min.css";
+import { useNavigate } from "react-router-dom";
 import userImg from "../../../assets/images/user.png";
 
 const  SiteManagement = () => {
+       const navigate = useNavigate();
   return (
     // <div className="main-panel">
     //  <div className="content-wrapper">
@@ -490,10 +490,9 @@ const  SiteManagement = () => {
     //       </div>
     //     </div>
     //     </div>
-    <div class="container-scroller">
         <div className="container-fluid page-body-wrapper">
   {/* partial:partials/_navbar.html */}
-  <nav className="navbar p-0 fixed-top d-flex flex-row">
+  {/* <nav className="navbar p-0 fixed-top d-flex flex-row">
     <div className="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
       <a className="navbar-brand brand-logo-mini" href="index.html">
         <img src="assets/images/logo.png" alt="user" />
@@ -590,7 +589,7 @@ const  SiteManagement = () => {
             <div className="navbar-profile">
               <img
                 className="img-xs rounded-circle"
-                src="assets/images/user.png"
+                src={userImg}
                 alt=""
               />
               <p className="mb-0 d-none d-sm-block navbar-profile-name">
@@ -625,7 +624,7 @@ const  SiteManagement = () => {
         <span className="mdi mdi-format-line-spacing" />
       </button>
     </div>
-  </nav>
+  </nav> */}
   {/* partial */}
   <div className="main-panel">
     <div className="content-wrapper">
@@ -650,12 +649,13 @@ const  SiteManagement = () => {
                         className="form-control border-r50"
                         placeholder="Search Report"
                       />
-                      <a
+                      <button
+                       onClick={() => navigate('/SiteManagement/AddIPAddress')}
                         className="nav-link btn btn-success create-new-button"
-                        href="add-IP-address.html"
+                        // href="add-IP-address.html"
                       >
                         + ADD API
-                      </a>
+                      </button>
                     </form>
                   </li>
                 </ul>
@@ -689,14 +689,15 @@ const  SiteManagement = () => {
                         <div className="template-demo">
                           <button
                             type="button"
+                            onClick={() => navigate('/SiteManagement/EditIPaddress')}
                             className="btn btn-inverse-success  border-r50"
                           >
-                            <a
-                              href="Edit-IP-address.html"
+                            <div
+                            //   href="Edit-IP-address.html"
                               className="text-success"
                             >
                               <i className="fa fa-edit" /> Edit
-                            </a>
+                            </div>
                           </button>
                         </div>
                       </td>
@@ -768,8 +769,6 @@ const  SiteManagement = () => {
   </div>
   {/* main-panel ends */}
 </div>
-
-    </div>
   );
 };
 

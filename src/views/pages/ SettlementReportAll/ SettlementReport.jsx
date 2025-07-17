@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import "../../../assets/css/style.css";
 import "../../../assets/vendors/font-awesome/css/font-awesome.min.css";
 import "../../../assets/vendors/mdi/css/materialdesignicons.min.css";
@@ -14,13 +13,93 @@ import logo from "../../../assets/images/logo.png";
 import userImg from "../../../assets/images/user.png";
 
 const   SettlementReport = () => {
+      const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState("");
+
+  const openModal = (title) => {
+    setModalTitle(title);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalTitle("");
+  }
   return (
-    <div className="container-scroller">
+    <div>
+    {isModalOpen && (
+  <div
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100vw",
+      height: "100vh",
+    //   backgroundColor: "rgba(0, 0, 0, 0.6)", // semi-black overlay
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      zIndex: 9998,
+    }}
+  >
+    <div
+      style={{
+        backgroundColor: "#141414",
+        color: "#fff",
+        padding: "24px 20px",
+        borderRadius: "12px",
+        width: "95%",
+        maxWidth: "400px",
+        boxShadow: "0 0 20px rgba(0,0,0,0.4)",
+        position: "relative",
+      }}
+    >
+      <button
+        onClick={closeModal}
+        style={{
+          position: "absolute",
+          top: 10,
+          right: 12,
+          background: "transparent",
+          color: "#aaa",
+          fontSize: "18px",
+          border: "none",
+          cursor: "pointer",
+        }}
+      >
+        ×
+      </button>
+
+      {/* <h5
+        style={{
+          marginBottom: 15,
+          fontSize: "16px",
+          fontWeight: "600",
+        }}
+      >
+        Request
+      </h5> */}
+                                <h5 class="mobile-title text-light">Request <i class="fa fa-copy text-light"></i></h5>
+
+      <hr style={{ borderColor: "#333" }} />
+        <p class="text-muted">https://ipinfo.io/161.185.160.93/geohttps:</p>
+      {/* <button
+        className="btn btn-success mt-3 w-100"
+        style={{ fontSize: 14, padding: "10px 0", borderRadius: "8px" }}
+      >
+        Submit
+      </button> */}
+
+      
+    </div>
+  </div>
+)}
+
   {/* partial:partials/_sidebar.html */}
   {/* partial */}
   <div className="container-fluid page-body-wrapper">
     {/* partial:partials/_navbar.html */}
-    <nav className="navbar p-0 fixed-top d-flex flex-row">
+    {/* <nav className="navbar p-0 fixed-top d-flex flex-row">
       <div className="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
         <a className="navbar-brand brand-logo-mini" href="index.html">
           <img src="assets/images/logo.png" alt="user" />
@@ -121,7 +200,7 @@ const   SettlementReport = () => {
               <div className="navbar-profile">
                 <img
                   className="img-xs rounded-circle"
-                  src="assets/images/user.png"
+                  src={userImg}
                   alt=""
                 />
                 <p className="mb-0 d-none d-sm-block navbar-profile-name">
@@ -156,7 +235,7 @@ const   SettlementReport = () => {
           <span className="mdi mdi-format-line-spacing" />
         </button>
       </div>
-    </nav>
+    </nav> */}
     {/* partial */}
     <div className="main-panel">
       <div className="content-wrapper">
@@ -527,7 +606,7 @@ const   SettlementReport = () => {
                                 {" "}
                                 <i
                                   className="fa fa-edit text-success"
-                                  id="openModalBtn"
+                                //   id="openModalBtn"
                                 />
                               </a>
                             </button>
@@ -541,14 +620,15 @@ const   SettlementReport = () => {
                           <div className="template-demo">
                             <button
                               type="button"
+                               onClick={() => openModal("Update UTR Number")}
                               className="btn btn-inverse-danger  border-r50"
                             >
-                              <a
+                              <div
                                 href="settlement-report-api-req.html"
                                 className="text-danger"
                               >
                                 Request
-                              </a>
+                              </div>
                             </button>
                             <button
                               type="button"
